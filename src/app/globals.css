@@ -1,0 +1,362 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  --animate-star-btn: star-btn calc(var(--duration)*1s) linear infinite;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --radius: 0.5rem;
+}
+
+.testimonial-card-dark {
+  background: linear-gradient(to bottom, #111113, #0c0c0d);
+  border-top: 2px solid #262629;
+  border-radius: 8px;
+}
+
+.testimonial-card-dark:hover {
+  background: linear-gradient(to bottom, #1a1a1c, #0f0f10);
+  border-top: 2px solid #262629;
+}
+
+:root {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-montserrat: var(--font-montserrat);
+}
+
+
+
+* {
+  border-color: hsl(var(--border));
+  box-sizing: border-box;
+}
+
+.font-montserrat {
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.footer-divider {
+  border-top-color: #f9fafb !important;
+}
+
+@keyframes gradient-move {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes star-btn {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-move 3s ease infinite;
+}
+
+.animate-star-btn {
+  animation: star-btn calc(var(--duration, 3) * 1s) linear infinite;
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Плавный скролл для всех элементов */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Дополнительные настройки для максимально плавного скролла */
+body {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Для iOS */
+}
+
+/* Плавный скролл для контейнеров */
+.scroll-smooth {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Настройки для колесика мыши */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Дополнительные настройки для максимально плавного скролла */
+html {
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: smooth;
+}
+
+/* Плавный скролл для всех контейнеров */
+.scroll-container {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: smooth;
+}
+
+
+
+/* Настройки для колесика мыши - более плавное движение */
+@media (hover: hover) {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-100% - var(--gap))); }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+  will-change: transform;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.25s cubic-bezier(.4,0,.2,1) both;
+}
+
+.non-interactive {
+  pointer-events: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  touch-action: none !important;
+  overflow: hidden !important;
+}
+
+.non-interactive * {
+  pointer-events: none !important;
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-1200px);
+    opacity: 0;
+  }
+}
+
+.animate-meteor {
+  animation: meteor 20s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes shimmer {
+  0% {
+    opacity: 0.4;
+    filter: brightness(1) saturate(1);
+  }
+  50% {
+    opacity: 0.7;
+    filter: brightness(1.2) saturate(1.3);
+  }
+  100% {
+    opacity: 0.4;
+    filter: brightness(1) saturate(1);
+  }
+}
+
+@keyframes arrow-blink-move {
+  0% {
+    opacity: 0.5;
+    transform: translate(0, 0) rotate(-36deg);
+  }
+  40% {
+    opacity: 0.5;
+    transform: translate(0, 0) rotate(-36deg);
+  }
+  60% {
+    opacity: 0;
+    transform: translate(-24px, 24px) rotate(-36deg);
+  }
+  80% {
+    opacity: 0.5;
+    transform: translate(0, 0) rotate(-36deg);
+  }
+  100% {
+    opacity: 0.5;
+    transform: translate(0, 0) rotate(-36deg);
+  }
+}
+.animate-arrow-blink-move {
+  animation: arrow-blink-move 7s ease-in-out infinite;
+}
+
+@keyframes b-move {
+  0% { transform: translateX(-16px); }
+  50% { transform: translateX(10px); }
+  100% { transform: translateX(-16px); }
+}
+.animate-b-move {
+  animation: b-move 9.9s ease-in-out infinite;
+}
+
+@keyframes single-meteor {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0) rotate(215deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(120px) translateX(-800px) rotate(215deg);
+  }
+}
+.animate-single-meteor {
+  animation: single-meteor 1.5s linear forwards;
+}
+
+@keyframes meteor-center {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(215deg);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(80vw, 80vh) rotate(215deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(90vw, 90vh) rotate(215deg);
+  }
+}
+.animate-meteor-center {
+  animation: meteor-center 6s linear forwards;
+}
+
+@keyframes gradient {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+}
+
+.dark .bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+}
+
+
