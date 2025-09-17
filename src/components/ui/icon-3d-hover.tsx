@@ -29,10 +29,10 @@ const transition2 = {
   type: "tween" as const
 };
 
-const transformTemplate1 = (_: any, t: string) => `translate(-50%, -50%) ${t}`;
+const transformTemplate1 = (_: unknown, t: string) => `translate(-50%, -50%) ${t}`;
 
 // Transition wrapper component
-const Transition: React.FC<{ value: any; children: React.ReactNode }> = ({ value, children }) => {
+const Transition: React.FC<{ value: unknown; children: React.ReactNode }> = ({ value, children }) => {
   const config = React.useContext(MotionConfigContext);
   const transition = value ?? config.transition;
   const contextValue = React.useMemo(() => ({ ...config, transition }), [JSON.stringify(transition)]);
